@@ -11,6 +11,15 @@ export interface Product {
   featured?: boolean;
 }
 
+export interface GuideArticle {
+  slug: string;
+  title: string;
+  description: string;
+  excerpt: string;
+  date: string;
+  content: string;
+}
+
 export const categories = [
   {
     id: 'baby-care',
@@ -130,11 +139,12 @@ export const homepageFaqs = [
   }
 ];
 
-export const guideArticles = [
+export const guideArticles: GuideArticle[] = [
   {
     slug: 'choosing-the-right-baby-formula',
     title: 'How to Choose the Right Infant Milk Formula',
     description: 'A comprehensive guide for parents on selecting safe, nourishing formulas.',
+    excerpt: 'A comprehensive guide for parents on selecting safe, nourishing formulas.',
     date: '2026-08-01',
     content: 'Choosing the correct formula depends on age, nutritional needs, and pediatrician advice...'
   },
@@ -142,6 +152,7 @@ export const guideArticles = [
     slug: 'essential-surgical-supplies-at-home',
     title: 'Essential Medical & Surgical Supplies for Home Care',
     description: 'Keep your home first-aid kit fully stocked with these mandatory medical items.',
+    excerpt: 'Keep your home first-aid kit fully stocked with these mandatory medical items.',
     date: '2026-08-05',
     content: 'Having basic surgical dressings, sanitizers, and monitoring equipment at home is essential...'
   }
