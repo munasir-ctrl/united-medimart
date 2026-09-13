@@ -17,6 +17,7 @@ export interface GuideArticle {
   description: string;
   excerpt: string;
   date: string;
+  updated?: string;
   content: string;
 }
 
@@ -146,6 +147,7 @@ export const guideArticles: GuideArticle[] = [
     description: 'A comprehensive guide for parents on selecting safe, nourishing formulas.',
     excerpt: 'A comprehensive guide for parents on selecting safe, nourishing formulas.',
     date: '2026-08-01',
+    updated: '2026-08-01',
     content: 'Choosing the correct formula depends on age, nutritional needs, and pediatrician advice...'
   },
   {
@@ -154,6 +156,7 @@ export const guideArticles: GuideArticle[] = [
     description: 'Keep your home first-aid kit fully stocked with these mandatory medical items.',
     excerpt: 'Keep your home first-aid kit fully stocked with these mandatory medical items.',
     date: '2026-08-05',
+    updated: '2026-08-05',
     content: 'Having basic surgical dressings, sanitizers, and monitoring equipment at home is essential...'
   }
 ];
