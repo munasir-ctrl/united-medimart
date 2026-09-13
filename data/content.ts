@@ -3,8 +3,8 @@ export interface Product {
   name: string;
   slug: string;
   category: string;
-  price: number;
-  originalPrice?: number;
+  price: string;
+  originalPrice?: string;
   image: string;
   description: string;
   inStock: boolean;
@@ -70,8 +70,8 @@ export const products: Product[] = [
     name: 'Advanced Baby Milk Formula 400g',
     slug: 'advanced-baby-milk-formula-400g',
     category: 'baby-care',
-    price: 650,
-    originalPrice: 850,
+    price: '₹650',
+    originalPrice: '₹850',
     image: 'https://images.unsplash.com/photo-1584017911766-d451b3d0e843?auto=format&fit=crop&q=80&w=400',
     description: 'Nutrient-rich formula designed for healthy infant development.',
     inStock: true,
@@ -82,8 +82,8 @@ export const products: Product[] = [
     name: 'Dermatological Daily Sunscreen SPF 50+',
     slug: 'dermatological-daily-sunscreen-spf-50',
     category: 'skin-care',
-    price: 490,
-    originalPrice: 690,
+    price: '₹490',
+    originalPrice: '₹690',
     image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&q=80&w=400',
     description: 'Broad spectrum UV protection suitable for sensitive skin.',
     inStock: true,
@@ -94,8 +94,8 @@ export const products: Product[] = [
     name: 'Clinical Anti-Dandruff Scalp Treatment Shampoo',
     slug: 'clinical-anti-dandruff-shampoo',
     category: 'hair-care',
-    price: 350,
-    originalPrice: 450,
+    price: '₹350',
+    originalPrice: '₹450',
     image: 'https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?auto=format&fit=crop&q=80&w=400',
     description: 'Provides fast relief from dry scalp and persistent flaking.',
     inStock: true,
@@ -106,8 +106,8 @@ export const products: Product[] = [
     name: 'Daily Multivitamin & Minerals 60 Tablets',
     slug: 'daily-multivitamin-minerals-60-tablets',
     category: 'supplements',
-    price: 590,
-    originalPrice: 790,
+    price: '₹590',
+    originalPrice: '₹790',
     image: 'https://images.unsplash.com/photo-1471864190281-a93a3070b6de?auto=format&fit=crop&q=80&w=400',
     description: 'Complete nutritional support for daily immunity and stamina.',
     inStock: true,
@@ -147,7 +147,6 @@ export const guideArticles = [
   }
 ];
 
-// Helper functions expected by components/pages
 export function getFeaturedProducts() {
   return products.filter((p) => p.featured);
 }
