@@ -12,6 +12,7 @@ export interface Product {
 }
 
 export interface GuideArticle {
+  id: string;
   slug: string;
   title: string;
   description: string;
@@ -142,6 +143,7 @@ export const homepageFaqs = [
 
 export const guideArticles: GuideArticle[] = [
   {
+    id: '1',
     slug: 'choosing-the-right-baby-formula',
     title: 'How to Choose the Right Infant Milk Formula',
     description: 'A comprehensive guide for parents on selecting safe, nourishing formulas.',
@@ -151,6 +153,7 @@ export const guideArticles: GuideArticle[] = [
     content: 'Choosing the correct formula depends on age, nutritional needs, and pediatrician advice...'
   },
   {
+    id: '2',
     slug: 'essential-surgical-supplies-at-home',
     title: 'Essential Medical & Surgical Supplies for Home Care',
     description: 'Keep your home first-aid kit fully stocked with these mandatory medical items.',
