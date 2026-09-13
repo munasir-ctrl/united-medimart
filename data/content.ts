@@ -4,169 +4,139 @@ export interface Product {
   slug: string;
   category: string;
   price: string;
-  originalPrice?: string;
-  image: string;
   description: string;
+  features: string[];
   inStock: boolean;
-  featured?: boolean;
+  image?: string;
+}
+
+export interface Category {
+  id: string;
+  name: string;
+  slug: string;
+  description: string;
+  image?: string;
+  faqs?: { question: string; answer: string }[];
 }
 
 export interface GuideArticle {
   id: string;
   slug: string;
   title: string;
-  description: string;
   excerpt: string;
+  content: string;
+  category?: string;
   date: string;
   updated?: string;
-  content: string;
+  readTime?: string;
 }
 
-export const categories = [
+export const categories: Category[] = [
   {
-    id: 'baby-care',
-    name: 'Baby & Child Care',
-    slug: 'baby-care',
-    description: 'Milk formulas, gentle lotions, wipes, and baby essentials.',
-    image: 'https://images.unsplash.com/photo-1584017911766-d451b3d0e843?auto=format&fit=crop&q=80&w=400',
+    id: '1',
+    name: 'Medical Supplies',
+    slug: 'medical-supplies',
+    description: 'Essential diagnostic and daily care medical supplies for home and clinic use.',
     faqs: [
-      { question: "Are infant milk formulas authentic?", answer: "Yes, all milk formulas are 100% genuine and sourced from licensed distributors." }
-    ],
+      {
+        question: 'What types of medical supplies do you stock?',
+        answer: 'We stock diagnostic devices, daily care items, monitors, and clinical essentials.'
+      }
+    ]
   },
   {
-    id: 'skin-care',
-    name: 'Skin & Personal Care',
-    slug: 'skin-care',
-    description: 'Hydrating lotions, toners, sunscreens, and dermatological care.',
-    image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&q=80&w=400',
-    faqs: [],
+    id: '2',
+    name: 'Rehabilitation Equipment',
+    slug: 'rehabilitation-equipment',
+    description: 'Mobility aids, wheelchairs, walkers, and physical therapy equipment.',
+    faqs: [
+      {
+        question: 'Are mobility aids available for rent or purchase?',
+        answer: 'All our rehabilitation and mobility equipment is available for direct purchase.'
+      }
+    ]
   },
   {
-    id: 'hair-care',
-    name: 'Hair Care & Shampoos',
-    slug: 'hair-care',
-    description: 'Anti-dandruff shampoos, scalp treatments, and hair masks.',
-    image: 'https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?auto=format&fit=crop&q=80&w=400',
-    faqs: [],
+    id: '3',
+    name: 'Body Supports & Braces',
+    slug: 'body-supports',
+    description: 'Orthopedic supports, knee braces, lumbar belts, and posture correctors.',
+    faqs: [
+      {
+        question: 'How do I choose the correct size for a body support?',
+        answer: 'You can check our sizing guides or visit our store in Perumbavoor for professional sizing assistance.'
+      }
+    ]
   },
   {
-    id: 'supplements',
-    name: 'Vitamins & Nutrition',
-    slug: 'supplements',
-    description: 'Nutritional drinks, daily multivitamins, and health supplements.',
-    image: 'https://images.unsplash.com/photo-1471864190281-a93a3070b6de?auto=format&fit=crop&q=80&w=400',
-    faqs: [],
-  },
-  {
-    id: 'hygiene',
-    name: 'Hygiene & Wipes',
-    slug: 'hygiene',
-    description: 'Water wipes, cotton pads, sanitizers, and daily wellness essentials.',
-    image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=400',
-    faqs: [],
-  },
-  {
-    id: 'wellness',
-    name: 'Fitness & Gym Essentials',
-    slug: 'wellness',
-    description: 'Shaker bottles, sports nutrition, and fitness accessories.',
-    image: 'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&q=80&w=400',
-    faqs: [],
-  },
+    id: '4',
+    name: 'Baby Care Essentials',
+    slug: 'baby-care',
+    description: 'Safe and gentle healthcare products designed for infants and toddlers.',
+    faqs: [
+      {
+        question: 'Are baby care products safe for sensitive skin?',
+        answer: 'Yes, all our listed baby care items are dermatologically tested and safe.'
+      }
+    ]
+  }
 ];
 
 export const products: Product[] = [
   {
-    id: '1',
-    name: 'Advanced Baby Milk Formula 400g',
-    slug: 'advanced-baby-milk-formula-400g',
-    category: 'baby-care',
+    id: 'prod-1',
+    name: 'Digital Blood Pressure Monitor',
+    slug: 'digital-blood-pressure-monitor',
+    category: 'medical-supplies',
+    price: '₹1,850',
+    description: 'Clinically accurate upper arm blood pressure monitor with large LCD display and irregular heartbeat indicator.',
+    features: ['One-touch operation', 'Memory storage for 120 readings', 'WHO blood pressure classification indicator'],
+    inStock: true
+  },
+  {
+    id: 'prod-2',
+    name: 'Foldable Standard Wheelchair',
+    slug: 'foldable-standard-wheelchair',
+    category: 'rehabilitation-equipment',
+    price: '₹6,500',
+    description: 'Durable chrome-plated steel frame wheelchair with comfortable padded armrests and folding design for easy transport.',
+    features: ['Heavy-duty steel frame', 'Detachable footrests', 'Puncture-proof solid tires'],
+    inStock: true
+  },
+  {
+    id: 'prod-3',
+    name: 'Neoprene Knee Support',
+    slug: 'neoprene-knee-support',
+    category: 'body-supports',
     price: '₹650',
-    originalPrice: '₹850',
-    image: 'https://images.unsplash.com/photo-1584017911766-d451b3d0e843?auto=format&fit=crop&q=80&w=400',
-    description: 'Nutrient-rich formula designed for healthy infant development.',
-    inStock: true,
-    featured: true,
-  },
-  {
-    id: '2',
-    name: 'Dermatological Daily Sunscreen SPF 50+',
-    slug: 'dermatological-daily-sunscreen-spf-50',
-    category: 'skin-care',
-    price: '₹490',
-    originalPrice: '₹690',
-    image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&q=80&w=400',
-    description: 'Broad spectrum UV protection suitable for sensitive skin.',
-    inStock: true,
-    featured: true,
-  },
-  {
-    id: '3',
-    name: 'Clinical Anti-Dandruff Scalp Treatment Shampoo',
-    slug: 'clinical-anti-dandruff-shampoo',
-    category: 'hair-care',
-    price: '₹350',
-    originalPrice: '₹450',
-    image: 'https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?auto=format&fit=crop&q=80&w=400',
-    description: 'Provides fast relief from dry scalp and persistent flaking.',
-    inStock: true,
-    featured: true,
-  },
-  {
-    id: '4',
-    name: 'Daily Multivitamin & Minerals 60 Tablets',
-    slug: 'daily-multivitamin-minerals-60-tablets',
-    category: 'supplements',
-    price: '₹590',
-    originalPrice: '₹790',
-    image: 'https://images.unsplash.com/photo-1471864190281-a93a3070b6de?auto=format&fit=crop&q=80&w=400',
-    description: 'Complete nutritional support for daily immunity and stamina.',
-    inStock: true,
-    featured: true,
-  },
-];
-
-export const homepageFaqs = [
-  {
-    question: "Do you offer home delivery in Perumbavoor?",
-    answer: "Yes, we provide rapid home delivery across Perumbavoor and nearby areas."
-  },
-  {
-    question: "How can I place an order via WhatsApp?",
-    answer: "Simply click the 'Order via WhatsApp' button on any product or page to chat directly with our store pharmacists."
-  },
-  {
-    question: "Are all medical and surgical products genuine?",
-    answer: "Absolutely. We source our inventory strictly from authorized medical and pharmaceutical manufacturers."
+    description: 'Provides therapeutic warmth and compression for weak or injured knees, supporting joint mobility during recovery.',
+    features: ['Open patella design', 'Breathable neoprene material', 'Adjustable Velcro straps'],
+    inStock: true
   }
 ];
 
 export const guideArticles: GuideArticle[] = [
   {
-    id: '1',
-    slug: 'choosing-the-right-baby-formula',
-    title: 'How to Choose the Right Infant Milk Formula',
-    description: 'A comprehensive guide for parents on selecting safe, nourishing formulas.',
-    excerpt: 'A comprehensive guide for parents on selecting safe, nourishing formulas.',
-    date: '2026-08-01',
-    updated: '2026-08-01',
-    content: 'Choosing the correct formula depends on age, nutritional needs, and pediatrician advice...'
+    id: 'guide-1',
+    slug: 'choosing-the-right-blood-pressure-monitor',
+    title: 'How to Choose the Right Blood Pressure Monitor for Home Use',
+    excerpt: 'A comprehensive guide to selecting an accurate and reliable upper arm blood pressure monitor for daily health tracking.',
+    content: 'Monitoring blood pressure at home is essential for managing hypertension. When selecting a monitor, always prefer upper-arm cuff models over wrist models for clinical accuracy...',
+    category: 'Medical Supplies',
+    date: '2026-07-15',
+    readTime: '4 min read'
   },
   {
-    id: '2',
-    slug: 'essential-surgical-supplies-at-home',
-    title: 'Essential Medical & Surgical Supplies for Home Care',
-    description: 'Keep your home first-aid kit fully stocked with these mandatory medical items.',
-    excerpt: 'Keep your home first-aid kit fully stocked with these mandatory medical items.',
-    date: '2026-08-05',
-    updated: '2026-08-05',
-    content: 'Having basic surgical dressings, sanitizers, and monitoring equipment at home is essential...'
+    id: 'guide-2',
+    slug: 'understanding-mobility-aids-wheelchairs-walkers',
+    title: 'Understanding Mobility Aids: Wheelchairs, Walkers, and Crutches',
+    excerpt: 'Learn how to select the appropriate mobility aid to enhance patient independence, safety, and rehabilitation progress.',
+    content: 'Choosing the right mobility aid depends entirely on the patient’s strength, balance, and post-recovery requirements. Walkers offer maximum stability while wheelchairs provide long-distance support...',
+    category: 'Rehabilitation',
+    date: '2026-07-22',
+    readTime: '5 min read'
   }
 ];
-
-export function getFeaturedProducts() {
-  return products.filter((p) => p.featured);
-}
 
 export function getCategoryBySlug(slug: string) {
   return categories.find((c) => c.slug === slug);
@@ -174,4 +144,8 @@ export function getCategoryBySlug(slug: string) {
 
 export function getProductsByCategory(categorySlug: string) {
   return products.filter((p) => p.category === categorySlug);
+}
+
+export function getRelatedCategories(currentSlug: string) {
+  return categories.filter((c) => c.slug !== currentSlug).slice(0, 3);
 }
